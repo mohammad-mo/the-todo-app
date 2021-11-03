@@ -1,38 +1,129 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background: rgb(69, 88, 255);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.todo-app {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  width: 520px;
+  min-height: 230px;
+  background: #161a2b;
+  text-align: center;
+  margin: 128px auto;
+  border-radius: 10px;
+  padding-bottom: 32px;
+}
+
+h1 {
+  margin: 32px 0;
+  color: #fff;
+  font-size: 24px;
+}
+
+.complete {
+  text-decoration: line-through;
+  opacity: 0.4;
+}
+
+.todo-form {
+  margin-bottom: 32px;
+}
+
+.todo-input {
+  padding: 14px 32px 14px 16px;
+  border-radius: 4px 0 0 4px;
+  border: 2px solid rgb(95, 84, 255);
+  outline: none;
+  width: 320px;
+  background: transparent;
+  color: #fff;
+}
+
+.todo-input::placeholder {
+  color: #e2e2e2;
+}
+
+.todo-button {
+  padding: 16px;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  outline: none;
+  background: linear-gradient(
+    90deg,
+    rgb(95, 84, 255) 0%,
+    rgb(5, 30, 255) 100%
+  );
+  color: #fff;
+  text-transform: capitalize;
+}
+
+.todo-input.edit {
+  border: 2px solid #1472ff;
+}
+
+.todo-button.edit {
+  background: linear-gradient(
+    90deg,
+    #1472ff 0%,
+    #0066ff 100%
+  );
+  padding: 16px 22px;
+}
+
+.todo-container {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.todo-row {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: 10px auto;
+  color: #fff;
+  background: linear-gradient(
+    90deg,
+    rgb(52, 146, 253) 0%,
+    rgb(43, 46, 212) 100%
+  );
+  padding: 16px;
+  border-radius: 5px;
+  width: 90%;
 }
 
-.App-link {
-  color: #61dafb;
+.icons {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.delete-icon {
+  margin-right: 10px;
+  font-size: 20px;
+  color: #B3C7D6FF;
+  transition: all 0.3s;
+}
+
+.edit-icon {
+  color: #B3C7D6FF;
+  font-size: 22px;
+  transition: all 0.3s;
+}
+
+.delete-icon:hover,
+.delete-icon:active,
+.edit-icon:hover,
+.edit-icon:active {
+  color: #fefeff;
 }
