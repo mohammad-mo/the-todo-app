@@ -26,7 +26,7 @@ const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) =>
     }
 
     return (
-      <FlipMove duration={300} easing='ease-in-out' appearAnimation='fade'>
+      <FlipMove duration={300} easing='ease-in-out' appearAnimation='fade' leaveAnimation='none'>
         {todos.map((todo, index) => (
           <div
             className={todo.isComplete ? "todo-row complete" : "todo-row"}
